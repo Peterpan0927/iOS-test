@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ti0-NL-ZCb">
+                                <rect key="frame" x="76" y="318" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="up" backgroundImage="11.jpg"/>
+                                <connections>
+                                    <action selector="moveimage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gjE-4n-dB5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kPQ-2H-ddO">
+                                <rect key="frame" x="15" y="371" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="left" backgroundImage="22.jpg"/>
+                                <connections>
+                                    <action selector="moveimage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fi6-Ez-a51"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DZi-Ds-WZM">
+                                <rect key="frame" x="-91" y="236" width="56" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="right"/>
+                                <connections>
+                                    <action selector="moveimage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="adE-dv-N71"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RUX-Qh-S05">
+                                <rect key="frame" x="72" y="435" width="38" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="down" backgroundImage="22.jpg"/>
+                                <connections>
+                                    <action selector="moveimage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RHi-4c-25N"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Tq9-Ry-7vS">
+                                <rect key="frame" x="223" y="334" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="bigger" backgroundImage="33.jpg">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="moveimage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qz0-ok-hJD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Psm-Nw-sJh">
+                                <rect key="frame" x="311" y="334" width="50" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="smaller" backgroundImage="44.jpg">
+                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="moveimage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YRh-in-LjJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KvX-4p-wXs">
+                                <rect key="frame" x="220" y="409" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="turnleft" backgroundImage="55.jpeg"/>
+                                <connections>
+                                    <action selector="transformimageView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MbB-lM-L3g"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ht3-Nj-NMO">
+                                <rect key="frame" x="306" y="409" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="turnright" backgroundImage="33.jpg"/>
+                                <connections>
+                                    <action selector="transformimageView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X70-6W-Cdz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="clip" id="jYN-4O-CaX">
+                                <rect key="frame" x="99" y="92" width="176" height="142"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <state key="normal" title="你敢....." backgroundImage="11.jpg">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.03079350443" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted" title="住口" backgroundImage="22.jpg">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="P76-ad-pdW">
+                                <rect key="frame" x="131" y="371" width="35" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="right" backgroundImage="11.jpg"/>
+                                <connections>
+                                    <action selector="moveimage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="umC-Dt-lla"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kkM-MJ-kdM">
+                                <rect key="frame" x="151" y="520" width="77" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="66.jpg"/>
+                                <connections>
+                                    <action selector="changeFatherView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cXJ-md-lDC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.34716318811141111" green="1" blue="0.72108719051485748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="aa" destination="Ti0-NL-ZCb" id="ztv-gh-Ra8"/>
+                        <outlet property="imageView" destination="jYN-4O-CaX" id="hTE-hv-hrP"/>
+                        <outlet property="whiteview" destination="8bC-Xf-vdC" id="jD9-NP-Cr8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="15.5" y="40.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="11.jpg" width="533" height="300"/>
+        <image name="22.jpg" width="469" height="300"/>
+        <image name="33.jpg" width="480" height="300"/>
+        <image name="44.jpg" width="481" height="300"/>
+        <image name="55.jpeg" width="480" height="300"/>
+        <image name="66.jpg" width="480" height="300"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>
