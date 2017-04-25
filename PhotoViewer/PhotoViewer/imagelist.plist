@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>icon</key>
+		<string>1</string>
+		<key>index</key>
+		<string>唔哈哈哈哈哈哈哈</string>
+		<key>info</key>
+		<string>1/3</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>2</string>
+		<key>index</key>
+		<string>小朋友们还记得我吗？我就是光头</string>
+		<key>info</key>
+		<string>2/3</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>3</string>
+		<key>index</key>
+		<string>紫薇，站住不许走</string>
+		<key>info</key>
+		<string>3/3</string>
+	</dict>
+</array>
+</plist>

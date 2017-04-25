@@ -16,6 +16,7 @@
 		0492D2061EADAE9900ACF5E7 /* 1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0492D2031EADAE9900ACF5E7 /* 1.jpeg */; };
 		0492D2071EADAE9900ACF5E7 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0492D2041EADAE9900ACF5E7 /* 2.jpg */; };
 		0492D2081EADAE9900ACF5E7 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0492D2051EADAE9900ACF5E7 /* 3.jpg */; };
+		04A6DB661EAE3C23001B8E35 /* imagelist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04A6DB641EAE38BA001B8E35 /* imagelist.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		0492D2031EADAE9900ACF5E7 /* 1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpeg; sourceTree = "<group>"; };
 		0492D2041EADAE9900ACF5E7 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		0492D2051EADAE9900ACF5E7 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		04A6DB641EAE38BA001B8E35 /* imagelist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = imagelist.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,15 +66,16 @@
 		0492D1EA1EADA5A400ACF5E7 /* PhotoViewer */ = {
 			isa = PBXGroup;
 			children = (
+				04A6DB641EAE38BA001B8E35 /* imagelist.plist */,
 				0492D1EE1EADA5A400ACF5E7 /* AppDelegate.h */,
 				0492D1EF1EADA5A400ACF5E7 /* AppDelegate.m */,
 				0492D1F11EADA5A400ACF5E7 /* ViewController.h */,
 				0492D1F21EADA5A400ACF5E7 /* ViewController.m */,
 				0492D1F41EADA5A400ACF5E7 /* Main.storyboard */,
-				0492D2031EADAE9900ACF5E7 /* 1.jpeg */,
-				0492D2041EADAE9900ACF5E7 /* 2.jpg */,
 				0492D2051EADAE9900ACF5E7 /* 3.jpg */,
 				0492D1F71EADA5A400ACF5E7 /* Assets.xcassets */,
+				0492D2041EADAE9900ACF5E7 /* 2.jpg */,
+				0492D2031EADAE9900ACF5E7 /* 1.jpeg */,
 				0492D1F91EADA5A400ACF5E7 /* LaunchScreen.storyboard */,
 				0492D1FC1EADA5A400ACF5E7 /* Info.plist */,
 				0492D1EB1EADA5A400ACF5E7 /* Supporting Files */,
@@ -151,6 +154,7 @@
 				0492D1F81EADA5A400ACF5E7 /* Assets.xcassets in Resources */,
 				0492D2071EADAE9900ACF5E7 /* 2.jpg in Resources */,
 				0492D2081EADAE9900ACF5E7 /* 3.jpg in Resources */,
+				04A6DB661EAE3C23001B8E35 /* imagelist.plist in Resources */,
 				0492D1F61EADA5A400ACF5E7 /* Main.storyboard in Resources */,
 				0492D2061EADAE9900ACF5E7 /* 1.jpeg in Resources */,
 			);
@@ -326,6 +330,7 @@
 				0492D2011EADA5A400ACF5E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
