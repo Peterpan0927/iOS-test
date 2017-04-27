@@ -6,8 +6,10 @@
 //  Copyright © 2017年 Mac. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface brickView : NSObject
-
+@interface brickView : UIImageView
+{
+   CGPoint startLocation;
+}
 @end

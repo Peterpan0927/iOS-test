@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "DB6CEA634C5BA2F499D4E591FE94B3967AB133F6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "DB6CEA634C5BA2F499D4E591FE94B3967AB133F6" : 9223372036854775807,
+    "ABB1941EBE03F36CD3B7A7BC7283935DA78BB7C1" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "F49624BE-66CB-42D6-A0CD-958CC17EE7A0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "DB6CEA634C5BA2F499D4E591FE94B3967AB133F6" : "ios-test\/",
+    "ABB1941EBE03F36CD3B7A7BC7283935DA78BB7C1" : "ios-test\/XFHitBrick\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BlockBreaker",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "BlockBreaker\/BlockBreaker.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/XFZhuXiaoFeng\/XFHitBrick.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ABB1941EBE03F36CD3B7A7BC7283935DA78BB7C1"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:Peterpan0927\/iOS-test.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DB6CEA634C5BA2F499D4E591FE94B3967AB133F6"
+    }
+  ]
+}

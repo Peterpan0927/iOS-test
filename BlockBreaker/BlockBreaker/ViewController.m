@@ -7,133 +7,178 @@
 //
 
 #import "ViewController.h"
+#import "brickView.h"
 
-@interface ViewController ()<UICollisionBehaviorDelegate>
+#define BRICKHIGHT 15
+#define BRICKWIDTH 44
+#define TOP 40
+#define BOARDHIGHT 10
+#define BOARDWIDTH 48
 
-@property (nonatomic,strong) UIDynamicAnimator *animator;
+#define WIDTH (self.view.frame.size.width)
+#define NUM ((NSInteger)(self.view.frame.size.width-20)/53)
 
-@property (nonatomic,strong) NSMutableArray *array;
-@property (nonatomic,strong) UICollisionBehavior*  collision;
-@property (nonatomic,assign) CGAffineTransform trans;
+@interface ViewController ()
+@property(nonatomic,assign)CGPoint moveDis;
+@property(nonatomic,strong)NSTimer * timer;
+@property(nonatomic,strong)brickView * board;
+@property(nonatomic,strong)UIImageView *ball;
+@property(nonatomic,assign)double speed;
+@property(nonatomic,strong)NSMutableArray *bricks;
+@property(nonatomic,assign)NSInteger numOfBricks;
+@property (weak, nonatomic)IBOutlet UIButton *startBtn;
+
 @end
 
 @implementation ViewController
-
-- (NSMutableArray *)array {
-    if (_array == nil) {
-        _array  = [NSMutableArray array];
+- (void)pause{
+    self.timer.fireDate=[NSDate distantFuture];
+}
+//重写setter方法
+-(NSTimer *)timer{
+    if (!_timer) {
+        _timer=[NSTimer scheduledTimerWithTimeInterval:_speed target:self selector:@selector(onTimer) userInfo:nil repeats:YES];
+        _timer.fireDate=[NSDate distantFuture];
     }
-    return _array;
+    
+    return _timer;
+}
+//通过设置使highlighted不会被清除
+- (void)highlightButton:(UIButton *)b {
+    [b setHighlighted:YES];
 }
 
-- (void)viewDidLoad {
+- (IBAction)onTouchup:(UIButton *)sender {
+    [self performSelector:@selector(highlightButton:) withObject:sender afterDelay:0.0];
+}
+- (IBAction)startBtnClick:(id)sender {
+    _startBtn.selected=!_startBtn.selected;
+    
+    if (!_startBtn.selected) {
+        [self pause];
+    }
+    else{
+        if (!_timer) {
+            [self timer];
+            self.ball.frame=CGRectMake(self.view.frame.size.width/2.0, self.view.frame.size.height/2.0-20, 20, 20);
+            [self.view addSubview:_ball];
+            _board.frame=CGRectMake(self.view.frame.size.width/2.0, self.view.frame.size.height/2.0, BOARDWIDTH, BOARDHIGHT);
+        }
+        _timer.fireDate=[NSDate dateWithTimeIntervalSinceNow:0];
+    }
+
+}
+-(brickView *)board{
+    if (!_board) {
+        _board=[[brickView alloc] initWithImage:[UIImage imageNamed:@"2.png"]];
+        //定义图像的用户交互作用属性值
+        [_board setUserInteractionEnabled:YES];
+        //定义弹板的坐标，尺寸
+        _board.frame=CGRectMake(self.view.frame.size.width/2.0-15, self.view.frame.size.height/2.0, BOARDWIDTH, BOARDHIGHT);
+        [self.view addSubview:_board];
+    }
+    return _board;
+}
+-(void)viewDidLoad{
     [super viewDidLoad];
-    //
-    int totalcol = 8;
-    int total = 40;
-    int margin = 5;
-    //设置方块的位置
-    CGFloat viewOneX = 20;
-    CGFloat viewOneY = 100;
-    CGFloat viewW = 40;
-    CGFloat viewH = 40;
-    
-    UIDynamicAnimator *animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
-    
-    self.animator = animator;
-    
-    UICollisionBehavior *collision = [[UICollisionBehavior alloc] init];
-    self.collision = collision;
-    
-    collision.collisionDelegate = self;
-    
-    UIGravityBehavior *behavior = [[UIGravityBehavior alloc] init];
-    
-    collision.translatesReferenceBoundsIntoBoundary = YES;
-    
-    UIDynamicItemBehavior *item2 = [[UIDynamicItemBehavior alloc] init];
-    
-    //创建方块
-    for (int i = 0; i<total ; ++i) {
-        
-        int row = i / totalcol;
-        
-        int col = i % totalcol;
-        
-        CGFloat viewX = viewOneX + (viewW + margin) * col;
-        
-        CGFloat viewY = viewOneY + (viewH + margin) * row;
-        
-        UIView *view = [[UIView alloc] init];
-        
-        view.backgroundColor = [UIColor colorWithRed:arc4random() % 255 / 256.0 green:arc4random() % 255 / 256.0 blue:arc4random() % 255 / 256.0 alpha:1];
-        
-        view.frame = CGRectMake(viewX, viewY, viewW, viewH);
-        
-        self.trans = view.transform;
-        
-        item2.angularResistance = 0;
-        
-        item2.resistance = MAXFLOAT;
-        
-        item2.elasticity = 0;
-        
-        [item2 addItem:view];
-        
-        [collision addItem:view];
-        
-        [self.array addObject:view];
-        
-        [self.view addSubview:view];
-        
-    }
-    
-    UIDynamicItemBehavior *item = [[UIDynamicItemBehavior alloc] init];
-    
-    UIImageView *iconView = [[UIImageView alloc] initWithFrame:CGRectMake(arc4random() % (int)self.view.frame.size.width + 50 - 50, 500, 50, 50)];
-    
-    iconView.layer.cornerRadius = 50 * 0.5;
-    
-    iconView.backgroundColor = [UIColor blackColor];
-    
-    [self.view addSubview:iconView];
-    
-    item.resistance = 1;
-    
-    item.elasticity = 2;
-    
-    [item addItem:iconView];
-    
-    [self.animator addBehavior:collision];
-    [self.animator addBehavior:behavior];
-    
-    [self.animator addBehavior:item2];
-    
-    [collision addItem:iconView];
-    
-    [behavior addItem:iconView];
-    
-    [self.animator addBehavior:item];
-    
+     UIImageView *brick;
+    _moveDis=CGPointMake(-3, -3);
+    _speed=0.02;
+    [self board];
+    _ball=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"3.png"]];
+    [self brickNum:brick];
 }
-
-#pragma mark -  碰撞的代理方法
-- (void)collisionBehavior:(UICollisionBehavior *)behavior beganContactForItem:(id<UIDynamicItem>)item1 withItem:(id<UIDynamicItem>)item2 atPoint:(CGPoint)p {
+-(void)brickNum:(UIImageView *)brick{
     
-    UIView *view = (UIView *) item2;
+    self.bricks=[NSMutableArray arrayWithCapacity:4*NUM];
+    _speed-=0.003;
+    self.numOfBricks=4*NUM;
     
-    view.backgroundColor = [UIColor colorWithRed:arc4random() % 255 / 256.0 green:arc4random() % 255 / 256.0 blue:arc4random() % 255 / 256.0 alpha:1];
-    
-    if ([item1 class] != [item2 class])  {
+    for (int i=0; i<4; i++) {
         
-        UIView *view = (UIView *)item1;
-        
-        [self.collision removeItem:item1];
-        
-        [view removeFromSuperview];
-        
+        for (int j=0;j<NUM;j++) {
+            
+            brick=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"1.png"]];
+            brick.frame=CGRectMake(40+j*BRICKWIDTH+j*5, TOP+10+BRICKHIGHT*i+5*i, BRICKWIDTH, BRICKHIGHT);
+            [self.view addSubview:brick];
+            [self.bricks addObject:brick];
+        }
+    }
+}
+-(void)onTimer{
+    float posx,posy;
+    //球的中心坐标
+    posx=self.ball.center.x;
+    posy=self.ball.center.y;
+    self.ball.center = CGPointMake(posx+self.moveDis.x, posy+self.moveDis.y);
+    //球边界限制
+    if (self.ball.center.x>WIDTH || self.ball.center.x<0 ) {
+        _moveDis.x=-self.moveDis.x;
     }
     
+    if ( _ball.center.y<TOP ) {
+        _moveDis.y=-_moveDis.y;
+    }
+    NSInteger j=[_bricks count];
+    for (int i=0; i<j; i++) {
+        UIImageView *brick=(UIImageView *)[_bricks objectAtIndex:i];
+        if (CGRectIntersectsRect(_ball.frame, brick.frame)&&[brick superview]) {
+            [brick removeFromSuperview];
+            _numOfBricks--;
+            if ((_ball.center.y-16<brick.frame.origin.y+BRICKHIGHT || _ball.center.y+16>brick.frame.origin.y)
+                && _ball.center.x>brick.frame.origin.x && _ball.center.x<brick.frame.origin.x+BRICKWIDTH) {
+                _moveDis.y=-_moveDis.y;
+            }else if (_ball.center.y>brick.frame.origin.y && _ball.center.y<brick.frame.origin.y+BRICKHIGHT
+                      && (_ball.center.x+16>brick.frame.origin.x || _ball.center.x-16<brick.frame.origin.x+BRICKWIDTH)){
+                _moveDis.x=-_moveDis.x;
+            }else{
+                _moveDis.x=-_moveDis.x;
+                _moveDis.y=-_moveDis.y;
+            }
+            break;
+        }
+    }
+    if(_numOfBricks==0){
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"K.O." message:@"恭喜你赢了" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"再来一次" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            UIImageView *brick;
+            [self brickNum:brick];
+            _startBtn.selected=!_startBtn.selected;
+        }];
+        
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        [alert addAction:cancelAction];
+        [alert addAction:okAction];
+         [self presentViewController:alert animated:YES completion:nil];
+    }
+    if (CGRectIntersectsRect(_ball.frame, _board.frame)) {
+        if (_ball.center.x>_board.frame.origin.x&&_ball.center.x<_board.frame.origin.x+BOARDWIDTH) {
+            _moveDis.y=-_moveDis.y;
+        }else {
+            _moveDis.x=-_moveDis.x;
+            _moveDis.y=-_moveDis.y;
+        }
+    }else{
+        if (_ball.center.y>_board.center.y){
+            [_ball removeFromSuperview];
+            [_timer invalidate];
+            _timer=NULL;
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Sorry" message:@"你输了" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"再来一次" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                UIImageView *brick;
+                for (brick in _bricks){
+                    [brick removeFromSuperview];
+                }
+                [self brickNum:brick];
+                _startBtn.selected=!_startBtn.selected;
+            }];
+            
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+            [alert addAction:cancelAction];
+            [alert addAction:okAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+ }
 }
 
 @end
