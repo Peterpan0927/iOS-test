@@ -33,6 +33,7 @@
 @implementation ViewController
 - (void)pause{
     self.timer.fireDate=[NSDate distantFuture];
+    [self.board setUserInteractionEnabled:NO];//当暂停的时候不允许移动挡板
 }
 //重写setter方法
 -(NSTimer *)timer{
@@ -53,17 +54,17 @@
 }
 - (IBAction)startBtnClick:(id)sender {
     _startBtn.selected=!_startBtn.selected;
-    
     if (!_startBtn.selected) {
         [self pause];
     }
     else{
         if (!_timer) {
             [self timer];
-            self.ball.frame=CGRectMake(self.view.frame.size.width/2.0, self.view.frame.size.height/2.0-20, 20, 20);
+            self.ball.frame=CGRectMake(self.view.frame.size.width/2.0, self.view.frame.size.height/2.0+80, 20, 20);
             [self.view addSubview:_ball];
-            _board.frame=CGRectMake(self.view.frame.size.width/2.0, self.view.frame.size.height/2.0, BOARDWIDTH, BOARDHIGHT);
+            _board.frame=CGRectMake(self.view.frame.size.width/2.0-15, self.view.frame.size.height/2.0+100, BOARDWIDTH, BOARDHIGHT);
         }
+        [self.board setUserInteractionEnabled:YES];//恢复正常游戏后，重新启用属性
         _timer.fireDate=[NSDate dateWithTimeIntervalSinceNow:0];
     }
 
@@ -74,13 +75,15 @@
         //定义图像的用户交互作用属性值
         [_board setUserInteractionEnabled:YES];
         //定义弹板的坐标，尺寸
-        _board.frame=CGRectMake(self.view.frame.size.width/2.0-15, self.view.frame.size.height/2.0, BOARDWIDTH, BOARDHIGHT);
+        _board.frame=CGRectMake(self.view.frame.size.width/2.0-15, self.view.frame.size.height/2.0+100, BOARDWIDTH, BOARDHIGHT);
         [self.view addSubview:_board];
     }
     return _board;
 }
 -(void)viewDidLoad{
     [super viewDidLoad];
+    //开始的时候无法移动挡板
+    [self.board setUserInteractionEnabled:NO];
      UIImageView *brick;
     _moveDis=CGPointMake(-3, -3);
     _speed=0.02;
@@ -164,6 +167,7 @@
             [_timer invalidate];
             _timer=NULL;
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Sorry" message:@"你输了" preferredStyle:UIAlertControllerStyleAlert];
+            //判断选择之后进行一次回调
             UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"再来一次" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 UIImageView *brick;
                 for (brick in _bricks){

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>cars</key>
+		<array>
+			<string>本田</string>
+			<string>丰田</string>
+			<string>铃木</string>
+			<string>雷克萨斯</string>
+			<string>马自达</string>
+			<string>日产</string>
+			<string>三菱</string>
+			<string>现代</string>
+		</array>
+		<key>title</key>
+		<string>日韩品牌</string>
+		<key>desc</key>
+		<string>牛逼哄哄，哎哟，好像不错</string>
+	</dict>
+</array>
+</plist>

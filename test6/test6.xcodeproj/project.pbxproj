@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		044094EE1EE308680089E0B2 /* car.m in Sources */ = {isa = PBXBuildFile; fileRef = 044094ED1EE308680089E0B2 /* car.m */; };
+		0455A1691EE00EC6000B0DEC /* CarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0455A1681EE00EC6000B0DEC /* CarModel.m */; };
+		0455A16B1EE0397C000B0DEC /* car.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0455A16A1EE0397C000B0DEC /* car.plist */; };
+		0455A16D1EE04B95000B0DEC /* cars_simple.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0455A16C1EE04B95000B0DEC /* cars_simple.plist */; };
 		04A71D761EB08DA70001B93F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A71D751EB08DA70001B93F /* main.m */; };
 		04A71D791EB08DA70001B93F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A71D781EB08DA70001B93F /* AppDelegate.m */; };
 		04A71D7C1EB08DA70001B93F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A71D7B1EB08DA70001B93F /* ViewController.m */; };
@@ -16,6 +20,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		044094EC1EE308680089E0B2 /* car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = car.h; sourceTree = "<group>"; };
+		044094ED1EE308680089E0B2 /* car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = car.m; sourceTree = "<group>"; };
+		0455A1671EE00EC6000B0DEC /* CarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarModel.h; sourceTree = "<group>"; };
+		0455A1681EE00EC6000B0DEC /* CarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarModel.m; sourceTree = "<group>"; };
+		0455A16A1EE0397C000B0DEC /* car.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = car.plist; sourceTree = "<group>"; };
+		0455A16C1EE04B95000B0DEC /* cars_simple.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = cars_simple.plist; path = ../../../cars_simple.plist; sourceTree = "<group>"; };
 		04A71D711EB08DA70001B93F /* test6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A71D751EB08DA70001B93F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04A71D771EB08DA70001B93F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -65,8 +75,14 @@
 				04A71D7D1EB08DA70001B93F /* Main.storyboard */,
 				04A71D801EB08DA70001B93F /* Assets.xcassets */,
 				04A71D821EB08DA70001B93F /* LaunchScreen.storyboard */,
+				0455A16C1EE04B95000B0DEC /* cars_simple.plist */,
+				0455A1681EE00EC6000B0DEC /* CarModel.m */,
+				0455A1671EE00EC6000B0DEC /* CarModel.h */,
+				0455A16A1EE0397C000B0DEC /* car.plist */,
 				04A71D851EB08DA70001B93F /* Info.plist */,
 				04A71D741EB08DA70001B93F /* Supporting Files */,
+				044094EC1EE308680089E0B2 /* car.h */,
+				044094ED1EE308680089E0B2 /* car.m */,
 			);
 			path = test6;
 			sourceTree = "<group>";
@@ -139,8 +155,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				04A71D841EB08DA70001B93F /* LaunchScreen.storyboard in Resources */,
+				0455A16B1EE0397C000B0DEC /* car.plist in Resources */,
 				04A71D811EB08DA70001B93F /* Assets.xcassets in Resources */,
 				04A71D7F1EB08DA70001B93F /* Main.storyboard in Resources */,
+				0455A16D1EE04B95000B0DEC /* cars_simple.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +169,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0455A1691EE00EC6000B0DEC /* CarModel.m in Sources */,
+				044094EE1EE308680089E0B2 /* car.m in Sources */,
 				04A71D7C1EB08DA70001B93F /* ViewController.m in Sources */,
 				04A71D791EB08DA70001B93F /* AppDelegate.m in Sources */,
 				04A71D761EB08DA70001B93F /* main.m in Sources */,
@@ -314,6 +334,7 @@
 				04A71D8A1EB08DA70001B93F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
