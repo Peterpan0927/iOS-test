@@ -143,7 +143,6 @@
         
         NSArray *carArray = model.cars;
         
-        
         carArray[index] = newName;
         // 刷新tableView中的数据, 对所有数据进行刷新
          //       [_tableView reloadData];
