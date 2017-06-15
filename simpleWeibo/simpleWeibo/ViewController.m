@@ -32,6 +32,7 @@
         for(NSDictionary *dict in tempArray){
             WeiboModel *model = [WeiboModel weiboWithDict:dict];
             ContentFrameModel *frameModel = [[ContentFrameModel alloc] init];
+            //在这里将字典中的数据传入frameModel，然后调用重写的setter方法，将调整好的数据赋值回去，加入动态数组，此时每个cell中控件frame已经被分配好了。
             frameModel.weiboModel = model;
             [mutabel addObject:frameModel];
         }
@@ -64,7 +65,7 @@
     }
     
     ContentFrameModel *contentFrameModel = self.dataArray[indexPath.row];
-    
+    //将model里面的属性赋值回cell
     cell.contentFrameModel = contentFrameModel;
     
     return cell;
@@ -76,6 +77,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    //设置每一行的cell适配的行高，因为控制器首先调用的是这个方法，用以初始化行高，所以不能把设置cell的frame写在WeiboViewCell中。
     ContentFrameModel *frameModel = self.dataArray[indexPath.row];
     return frameModel.cellHeight;
 }

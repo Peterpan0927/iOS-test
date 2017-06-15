@@ -97,6 +97,8 @@
 			children = (
 				043E076C1EE7A00400E528F6 /* WeiboModel.h */,
 				043E076D1EE7A00400E528F6 /* WeiboModel.m */,
+				0415795C1EECEC75004BF016 /* ContentFrameModel.h */,
+				0415795D1EECEC75004BF016 /* ContentFrameModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -106,8 +108,6 @@
 			children = (
 				043E07761EE7A31900E528F6 /* WeiboViewCell.h */,
 				043E07771EE7A31900E528F6 /* WeiboViewCell.m */,
-				0415795C1EECEC75004BF016 /* ContentFrameModel.h */,
-				0415795D1EECEC75004BF016 /* ContentFrameModel.m */,
 			);
 			name = View;
 			sourceTree = "<group>";

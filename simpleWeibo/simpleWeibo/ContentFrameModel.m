@@ -49,7 +49,7 @@
     CGSize contentMaxSize = CGSizeMake(contentLabelWidth, MAXFLOAT);
     // NSFontAttributeName 字体的大小
     NSDictionary *attributesDict = @{NSFontAttributeName:[UIFont systemFontOfSize:17]};
-#warning 计算文本实际宽高的时候， 计算的字体大小要和label中设置的字体大小保持一致
+
     // 根据限定的条件， 来计算text 真实的宽高，给文本一个矩形空间
     CGSize contentRealSize =  [weiboModel.text boundingRectWithSize:contentMaxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attributesDict context:nil].size;
     
@@ -67,7 +67,6 @@
     CGFloat pictureX = margin;
     CGFloat pictureY = CGRectGetMaxY(_contentFrame) + margin;
     
-    CGFloat cellHeight = 0;
     
     if (weiboModel.picture) {
         _pictureImageFrame = CGRectMake(pictureX, pictureY, pictureWidth, pictureWidth);
